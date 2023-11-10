@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: "git@github.com:Korolev731/jenkins.git", credentialsId: '2a34e1ef-f8e1-425a-999a-49d5919acfce' // здесь добавляем credentialsId и указываем наш ID.
+                git branch: 'master', url: "git@github.com:Korolev731/jenkins.git", credentialsId: '2a34e1ef-f8e1-425a-999a-49d5919acfce' // здесь добавляем credentialsId и указываем наш ID.
             }
         }
         stage('Deploy') {
