@@ -1,3 +1,28 @@
 pipeline {
-    /* Ваши инструкции для конвейера */
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    
+    
+        stage('step 2') {
+            steps {
+              git 'https://github.com/Korolev731/jenkins.git'
+            }
+        }
+   
+       
+        stage('step 3') {
+            steps {
+              
+                sh "ls"
+                sh 'python hello.py '
+            }
+        }
+    }
+
 }
