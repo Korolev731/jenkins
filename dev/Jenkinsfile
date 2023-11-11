@@ -12,7 +12,10 @@ pipeline {
                 sh 'ls'
                 sh 'ansible --version'
    //             sh 'ansible all -m ping'
-                sh 'ansible-playbook ansible/playbook.yml'
+//                sh 'ansible-playbook ansible/playbook.yml'
+                                withCredentials([sshUserPrivateKey(credentialsId: 'github_key', keyFileVariable: 'PRIVATE')]) { // используем credentials и записываем их содержание во временный файл доступный по пути PRIVATE
+                  sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts --private-key $PRIVATE'
+                }
             }
         }
     }
