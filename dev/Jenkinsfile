@@ -12,7 +12,7 @@ pipeline {
                 sh 'ls'
                 sh 'ansible --version'
    //             sh 'ansible all -m ping'
-                sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts'
+                sh 'ansible-playbook ansible/playbook.yml'
             }
         }
     }
