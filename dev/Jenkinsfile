@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'ls'
                 sh 'ansible --version'
                 sh 'ansible all -m ping'
                 sh 'ansible-playbook playbook.yml'
