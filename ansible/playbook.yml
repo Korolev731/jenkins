@@ -2,5 +2,6 @@
 - name: "Test playbook run"
   hosts: all
   tasks:
-    - name: Example from an Ansible Playbook
-      ansible.builtin.ping:
+    - name: ping
+      shell: ping -c 1 -w 2 8.8.8.8
+      ignore_errors: true
