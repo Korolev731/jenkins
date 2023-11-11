@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'ansible ansible -v'
+                sh 'ansible --version'
                 sh 'ansible-playbook playbook.yml'
             }
         }
