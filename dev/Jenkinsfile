@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'ansible --version'
-                sh 'ansible all -m ping'
+   //             sh 'ansible all -m ping'
                 sh 'ansible-playbook ansible/playbook.yml'
             }
         }
